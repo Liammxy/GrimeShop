@@ -129,21 +129,21 @@
             object-fit: cover;
         }
 
-       /* Textos dos Produtos Alinhados e Harmonizados */
+        /* Textos e Espaçamentos */
         .product-title {
             font-size: 1.1rem;
             font-weight: bold;
             text-transform: uppercase;
             margin-top: 15px;
             letter-spacing: 0.5px;
-            color: #ffffff; /* Branco total para o título se destacar */
+            color: #ffffff;
         }
 
-        /* Texto descritivo sutil igual ao do banner */
+        /* Garante contraste alto nas descrições dos cards no fundo grafite */
         .product-desc {
-            font-weight: 300;
-            opacity: 0.85;
-            color: #f8f9fa; /* Mesma tonalidade text-light */
+            font-weight: 300 !important;
+            opacity: 0.9 !important;
+            color: #f8f9fa !important; 
         }
 
         .product-price {
@@ -172,10 +172,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mt-3 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link-cursed active" href="index.php">Drop Inicial</a>
+                        <a class="nav-link-cursed active" href="/ProjetoGrimeShop/index.php">Drop Inicial</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-cursed" href="#">Coleções</a>
+                        <a class="nav-link-cursed" href="/ProjetoGrimeShop/paginas/colecoes.php">Coleções</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link-cursed" href="#">Acessórios</a>
