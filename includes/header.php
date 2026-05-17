@@ -114,23 +114,45 @@
             color: #ffffff;
             border-color: #ffffff;
         }
+        /* Cards de Produto Streetwear - Borda Vermelha Fixa */
         .card-cursed {
-            background-color: #000000;
-            border: 1px solid #111111;
+            background-color: #0c0c0c;
+            border: 1px solid #ff0033; /* Borda vermelha ativa o tempo todo */
             border-radius: 0px !important;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.3s ease; /* Transição suave caso queira algum movimento futuro */
         }
-        .card-cursed:hover { border-color: #ffffff; }
+
+        /* Foto 100% natural, sem filtros e sem zoom */
         .card-cursed img {
             border-radius: 0px !important;
-            filter: grayscale(100%) contrast(120%);
-            transition: filter 0.4s ease;
-            height: 380px;
+            height: 400px;
             object-fit: cover;
         }
-        .card-cursed:hover img { filter: grayscale(0%) contrast(100%); }
-        .product-title { font-size: 1.1rem; font-weight: bold; text-transform: uppercase; margin-top: 15px; letter-spacing: 0.5px; }
-        .product-price { font-size: 1.2rem; color: #ffffff; font-weight: bold; margin-bottom: 15px; }
+
+       /* Textos dos Produtos Alinhados e Harmonizados */
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+            color: #ffffff; /* Branco total para o título se destacar */
+        }
+
+        /* Texto descritivo sutil igual ao do banner */
+        .product-desc {
+            font-weight: 300;
+            opacity: 0.85;
+            color: #f8f9fa; /* Mesma tonalidade text-light */
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: #ff0033;
+            font-weight: 900;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
