@@ -1,3 +1,8 @@
+<?php
+// Captura o nome do arquivo atual (ex: index.php, suporte.php, colecoes.php)
+$pagina_atual = basename($_SERVER['PHP_SELF']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -171,24 +176,22 @@
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mt-3 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link-cursed active" href="/ProjetoGrimeShop/index.php">Drop Inicial</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-cursed" href="/ProjetoGrimeShop/paginas/colecoes.php">Coleções</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-cursed" href="/ProjetoGrimeShop/paginas/acessorios.php">Acessórios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-cursed" href="/ProjetoGrimeShop/paginas/suporte.php">Suporte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-cursed text-white" href="/ProjetoGrimeShop/paginas/carrinho.php" style="font-weight: 900;">
-                            Carrinho (0)
-                        </a>
-                    </li>
-                </ul>
+    <li class="nav-item">
+        <a class="nav-link-cursed <?php echo ($pagina_atual == 'index.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/index.php">Drop Inicial</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link-cursed <?php echo ($pagina_atual == 'colecoes.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/colecoes.php">Coleções</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link-cursed <?php echo ($pagina_atual == 'acessorios.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/acessorios.php">Acessórios</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link-cursed <?php echo ($pagina_atual == 'suporte.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/suporte.php">Suporte</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link-cursed <?php echo ($pagina_atual == 'carrinho.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/carrinho.php">Carrinho (2)</a>
+    </li>
+</ul>
             </div>
             
         </div>
