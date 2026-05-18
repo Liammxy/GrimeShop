@@ -178,10 +178,10 @@
                         <a class="nav-link-cursed" href="/ProjetoGrimeShop/paginas/colecoes.php">Coleções</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-cursed" href="#">Acessórios</a>
+                        <a class="nav-link-cursed" href="/ProjetoGrimeShop/paginas/acessorios.php">Acessórios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-cursed" href="#">Suporte</a>
+                        <a class="nav-link-cursed" href="/ProjetoGrimeShop/paginas/suporte.php">Suporte</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link-cursed text-white" href="#" style="font-weight: 900;">
