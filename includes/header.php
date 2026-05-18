@@ -157,10 +157,10 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-cursed mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-cursed mb-5" style="border-bottom: 1px solid #ff0033">
         <div class="container">
             
-            <a class="logo-container text-decoration-none" href="index.php">
+            <a class="logo-container text-decoration-none" href="/ProjetoGrimeShop/index.php">
                 <span class="logo-main">GRIME SHOP</span>
                 <span class="logo-sub">CLOTHING CO.</span>
             </a>
@@ -184,7 +184,7 @@
                         <a class="nav-link-cursed" href="/ProjetoGrimeShop/paginas/suporte.php">Suporte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-cursed text-white" href="#" style="font-weight: 900;">
+                        <a class="nav-link-cursed text-white" href="/ProjetoGrimeShop/paginas/carrinho.php" style="font-weight: 900;">
                             Carrinho (0)
                         </a>
                     </li>
