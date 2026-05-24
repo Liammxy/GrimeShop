@@ -166,8 +166,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         <div class="container">
             
             <a class="logo-container text-decoration-none" href="/ProjetoGrimeShop/index.php">
-                <span class="logo-main">GRIME SHOP</span>
-                <span class="logo-sub">CLOTHING CO.</span>
+    <img src="/ProjetoGrimeShop/images/logo-grime.jpeg" alt="Grime Shop Logo" style="max-height: 90px; width: auto; object-fit: contain;">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

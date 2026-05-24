@@ -66,7 +66,7 @@ include '../includes/header.php';
                 <form action="#" method="POST">
                     <div class="mb-3">
                         <label class="form-label text-white small text-uppercase fw-bold" style="letter-spacing: 0.5px;">Nome Completo</label>
-                        <input type="text" class="form-control" style="background-color: #000; border: 1px solid #222; color: #fff; border-radius: 0px;" placeholder="Ex: Guilherme Silva" required>
+                        <input type="text" class="form-control" style="background-color: #000; border: 1px solid #222; color: #fff; border-radius: 0px;" placeholder="Ex: Guilherme" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label text-white small text-uppercase fw-bold" style="letter-spacing: 0.5px;">E-mail de Contato</label>
