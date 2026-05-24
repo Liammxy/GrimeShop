@@ -165,8 +165,8 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
     <nav class="navbar navbar-expand-lg navbar-dark navbar-cursed mb-5" style="border-bottom: 1px solid #ff0033">
         <div class="container">
             
-            <a class="logo-container text-decoration-none" href="/ProjetoGrimeShop/index.php">
-    <img src="/ProjetoGrimeShop/images/logo-grime.jpeg" alt="Grime Shop Logo" style="max-height: 90px; width: auto; object-fit: contain;">
+            <a class="logo-container text-decoration-none" href="/index.php">
+    <img src="/images/logo-grime.jpeg" alt="Grime Shop Logo" style="max-height: 90px; width: auto; object-fit: contain;">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -176,19 +176,19 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mt-3 mt-lg-0">
     <li class="nav-item">
-        <a class="nav-link-cursed <?php echo ($pagina_atual == 'index.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/index.php">Drop Inicial</a>
+        <a class="nav-link-cursed <?php echo ($pagina_atual == 'index.php') ? 'active' : ''; ?>" href="/index.php">Drop Inicial</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link-cursed <?php echo ($pagina_atual == 'colecoes.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/colecoes.php">Coleções</a>
+        <a class="nav-link-cursed <?php echo ($pagina_atual == 'colecoes.php') ? 'active' : ''; ?>" href="/paginas/colecoes.php">Coleções</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link-cursed <?php echo ($pagina_atual == 'acessorios.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/acessorios.php">Acessórios</a>
+        <a class="nav-link-cursed <?php echo ($pagina_atual == 'acessorios.php') ? 'active' : ''; ?>" href="/paginas/acessorios.php">Acessórios</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link-cursed <?php echo ($pagina_atual == 'suporte.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/suporte.php">Suporte</a>
+        <a class="nav-link-cursed <?php echo ($pagina_atual == 'suporte.php') ? 'active' : ''; ?>" href="/paginas/suporte.php">Suporte</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link-cursed <?php echo ($pagina_atual == 'carrinho.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/carrinho.php">Carrinho (2)</a>
+        <a class="nav-link-cursed <?php echo ($pagina_atual == 'carrinho.php') ? 'active' : ''; ?>" href="/paginas/carrinho.php">Carrinho (2)</a>
     </li>
 </ul>
             </div>
