@@ -3,7 +3,7 @@
 include 'includes/header.php'; 
 ?>
 
-<main class="position-relative overflow-hidden py-5">
+<main class="position-relative overflow-hidden pb-0 pt-0">
 
     <video autoplay muted loop playsinline class="position-absolute top-50 start-50 translate-middle w-100 h-100" style="object-fit: cover; z-index: 1; pointer-events: none;">
         <source src="images/fundo.mp4" type="video/mp4">

@@ -159,12 +159,11 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             letter-spacing: 1px;
         }
 
-        .bg-grid-dark {
-    background-color: #121212;
-    background-image: 
-        linear-gradient(to right, rgba(255, 0, 51, 0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 0, 51, 0.02) 1px, transparent 1px);
-    background-size: 40px 40px;
+        /* efeito na logo ao passar o mouse */
+        .logo-animada:hover{
+            transform: scale(1.0); /* leve zoom */
+            filter: drop-shadow(0 0 15px #ff0033) !important; /* faz o vermelho estourar */
+            transition: all 0,3s ease-in-out; /* transição mais fluida */
         }
 
     </style>
@@ -172,11 +171,11 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-cursed mb-5" style="border-bottom: 1px solid #ff0033">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-cursed p-0" style="border-bottom: 1px solid #ff0033">
         <div class="container">
             
-            <a class="logo-container text-decoration-none" href="/index.php">
-    <img src="/images/logo-grime.jpeg" alt="Grime Shop Logo" style="max-height: 90px; width: auto; object-fit: contain;">
+            <a class="logo-container text-decoration-none" href="/index.php" data-aos="zoom-in" data-aos-duration="1200">
+    <img src="/images/logo-grime.jpeg" alt="Grime Shop Logo" class="logo-animada" style="max-height: 120px; width: auto; object-fit: contain; transition: all 0.4s ease-in-out; filter: drop-shadow(0 0 5px rgba(255, 0, 51, 0.2));">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

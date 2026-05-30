@@ -1,4 +1,4 @@
-<footer class="pt-4 pb-3" style="background-color: #000000; border-top: 1px solid #ff0033; margin-top: 50px;">
+<footer class="m-0 pt-4 pb-3" style="background-color: #000000; border-top: 2px solid #ff0033;">
         <div class="container">
             <div class="row g-4 text-center text-md-start">
                 
