@@ -3,9 +3,19 @@
 include '../includes/header.php'; 
 ?>
 
+<main class="position-relative overflow-hidden pt-0 pb-0" style="min-height: 75vh;">
+
+    <video autoplay muted loop playsinline class="position-absolute top-50 start-50 translate-middle w-100 h-100" style="object-fit: cover; z-index: 1; pointer-events: none;">
+        <source src="../images/fundo.mp4" type="video/mp4">
+    </video>
+
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(18, 18, 18, 0.75); z-index: 2;"></div>
+
+    <div class="container position-relative" style="z-index: 3; py-5;">
+
 <div class="container my-4">
     <div class="mb-5 mt-4">
-        <h1 class="display-5 fw-bold text-white text-uppercase mb-2" style="letter-spacing: 2px;">[ SEU_CARRINHO ]</h1>
+        <h1 class="display-5 fw-bold text-white text-uppercase mb-2" style="letter-spacing: 2px;">SEU CARRINHO</h1>
         <p class="text-light" style="font-weight: 300; opacity: 0.85;">Confira os itens selecionados antes de fechar o pedido.</p>
         <div style="height: 2px; background-color: #ff0033; width: 80px; margin-top: 15px;"></div>
     </div>
@@ -14,7 +24,7 @@ include '../includes/header.php';
         
         <div class="col-md-8">
             
-            <div class="card p-3 mb-3" style="background-color: #0c0c0c; border: 1px solid #1a1a1a; border-radius: 0px;">
+            <div class="card p-3 mb-3" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
                 <div class="row align-items-center text-center text-sm-start">
                     <div class="col-sm-2 mb-3 mb-sm-0">
                         <img src="../images/calcabaggy.jpeg" class="img-fluid" alt="Calça Baggy" style="max-height: 80px; object-fit: cover;">
@@ -32,7 +42,7 @@ include '../includes/header.php';
                 </div>
             </div>
 
-            <div class="card p-3 mb-3" style="background-color: #0c0c0c; border: 1px solid #1a1a1a; border-radius: 0px;">
+            <div class="card p-3 mb-3" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
                 <div class="row align-items-center text-center text-sm-start">
                     <div class="col-sm-2 mb-3 mb-sm-0">
                         <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?q=80&w=600" class="img-fluid" alt="Coturno Dark" style="max-height: 80px; object-fit: cover;">
@@ -54,7 +64,7 @@ include '../includes/header.php';
 
         <div class="col-md-4">
             <div class="card p-4" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
-                <h4 class="text-white text-uppercase fw-bold mb-4" style="font-size: 1.2rem; letter-spacing: 1px;">// RESUMO</h4>
+                <h4 class="text-white text-uppercase fw-bold mb-4" style="font-size: 1.2rem; letter-spacing: 1px;">RESUMO</h4>
                 
                 <div class="d-flex justify-content-between mb-2 pb-2" style="border-bottom: 1px solid #1a1a1a;">
                     <span style="color: #b5b5b5; font-size: 0.9rem;">Subtotal</span>
@@ -78,6 +88,9 @@ include '../includes/header.php';
 
     </div>
 </div>
+
+</div> <!-- Fecha o container -->
+</main> <!-- Fecha a main do vídeo -->
 
 <?php 
 // Puxa o rodapé do diretório includes

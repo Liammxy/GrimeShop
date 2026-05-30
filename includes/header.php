@@ -175,6 +175,15 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             transition: all 0,3s ease-in-out; /* transição mais fluida */
         }
 
+        .card {
+        transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+        transform: scale(1.01); /* um pequeno zoom */ 
+        filter: drop-shadow(0 0 18px #ff0033);
+        background-color: #121212 !important;
+        }
+
     </style>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>

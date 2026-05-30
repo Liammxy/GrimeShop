@@ -3,6 +3,16 @@
 include '../includes/header.php'; 
 ?>
 
+<main class="position-relative overflow-hidden pt-0 pb-0" style="min-height: 75vh;">
+
+    <video autoplay muted loop playsinline class="position-absolute top-50 start-50 translate-middle w-100 h-100" style="object-fit: cover; z-index: 1; pointer-events: none;">
+        <source src="../images/fundo.mp4" type="video/mp4">
+    </video>
+
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(18, 18, 18, 0.75); z-index: 2;"></div>
+
+    <div class="container position-relative" style="z-index: 3; py-5;">
+
 <div class="container my-4">
     <div class="mb-5 mt-4">
         <h1 class="display-5 fw-bold text-white text-uppercase mb-2" style="letter-spacing: 2px;">[ CENTRAL_DE_SUPORTE ]</h1>
@@ -109,6 +119,9 @@ include '../includes/header.php';
         box-shadow: 0 0 0 0.25rem rgba(255, 0, 51, 0.25) !important;
     }
 </style>
+
+</div> <!-- Fecha o container -->
+</main> <!-- Fecha a main do vídeo -->
 
 <?php 
 // Puxa o rodapé de dentro da pasta includes
