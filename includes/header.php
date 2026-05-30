@@ -158,6 +158,15 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             margin-bottom: 15px;
             letter-spacing: 1px;
         }
+
+        .bg-grid-dark {
+    background-color: #121212;
+    background-image: 
+        linear-gradient(to right, rgba(255, 0, 51, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 0, 51, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+        }
+
     </style>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>

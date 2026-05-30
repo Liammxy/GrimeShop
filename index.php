@@ -3,6 +3,16 @@
 include 'includes/header.php'; 
 ?>
 
+<main class="position-relative overflow-hidden py-5" style="min-height: 75vh;">
+
+    <video autoplay muted loop playsinline class="position-absolute top-50 start-50 translate-middle w-100 h-100" style="object-fit: cover; z-index: 1; pointer-events: none;">
+        <source src="images/fundo.mp4" type="video/mp4">
+    </video>
+
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(18, 18, 18, 0.75); z-index: 2;"></div>
+
+    <div class="container position-relative" style="z-index: 3;">
+
 <div class="container my-4">
 
     <div class="p-5 mb-5 text-center d-flex align-items-center" style="background-color: #0c0c0c; border: 1px solid #ff0033; min-height: 300px;">
@@ -57,7 +67,7 @@ include 'includes/header.php';
 
     </div>
 </div>
-
+</main>
 <?php 
 // Puxa o rodapé
 include 'includes/footer.php'; 
