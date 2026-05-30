@@ -10,6 +10,10 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grime Shop | Streetwear Independente</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
         /* Estética Cursed / Streetwear */
@@ -19,6 +23,11 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             font-family: 'Courier New', Courier, monospace;
             letter-spacing: -0.5px;
         }
+
+        /* Aplica nos títulos, links do menu e cabeçalhos */
+         h1, h2, h3, h4, h5, h6, .nav-link, .navbar-brand {
+         font-family: 'Cardo', serif !important;
+         }
 
         /* Ajustes da Barra de Navegação */
         .navbar-cursed {
