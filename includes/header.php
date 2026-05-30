@@ -26,14 +26,14 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
 
         /* Aplica nos títulos, links do menu e cabeçalhos */
          h1, h2, h3, h4, h5, h6, .nav-link, .navbar-brand {
-         font-family: 'Cardo', serif !important;
+             font-family: 'Cardo', serif !important;
          }
 
         /* Ajustes da Barra de Navegação */
         .navbar-cursed {
             background-color: #000000;
             border-bottom: 1px solid #111111;
-            padding: 30px 0; /* Aumenta a área do topo para dar mais respiro à logo */
+            padding: 20px 0; /* Ajustado levemente para não esmagar o mobile */
         }
         
         /* Estilização da Logo em Texto (Brutalismo) */
@@ -95,19 +95,22 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             width: calc(100% - 40px);
         }
 
-        /* Customização do botão sanduíche no mobile */
-        .navbar-toggler {
-            border: 1px solid #222 !important;
-            border-radius: 0px !important;
-            padding: 8px !important;
+        /* Customização BRUTALISTA do botão sanduíche no mobile (Grime Style) */
+        .navbar-toggler-grime {
+            border: 1px solid #ff0033 !important; /* Borda vermelha marcante */
+            border-radius: 0px !important;       /* Cantos totalmente retos e secos */
+            padding: 8px 10px !important;
+            background-color: rgba(12, 12, 12, 0.85) !important; /* Fundo escuro opaco contra o vídeo */
+            transition: all 0.2s ease-in-out;
         }
         
-        .navbar-toggler:focus {
-            box-shadow: none !important;
+        .navbar-toggler-grime:focus {
+            box-shadow: 0 0 10px rgba(255, 0, 51, 0.5) !important; /* Brilho de foco vermelho */
         }
         
-        .navbar-toggler-icon {
-            filter: invert(1); /* Deixa o ícone do menu branco */
+        .navbar-toggler-icon-grime {
+            /* Filtro mágico para forçar os 3 risquinhos a ficarem no tom vermelho/neon visível no escuro */
+            filter: invert(1) sepia(1) saturate(5) hue-rotate(340deg) !important; 
         }
 
         /* ... Seus estilos de botões e cards continuam aqui embaixo ... */
@@ -172,16 +175,32 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         .logo-animada:hover{
             transform: scale(1.0); /* leve zoom */
             filter: drop-shadow(0 0 15px #ff0033) !important; /* faz o vermelho estourar */
-            transition: all 0,3s ease-in-out; /* transição mais fluida */
+            transition: all 0.3s ease-in-out; /* transição mais fluida */
         }
 
         .card {
-        transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
         }
         .card:hover {
-        transform: scale(1.01); /* um pequeno zoom */ 
-        filter: drop-shadow(0 0 18px #ff0033);
-        background-color: #121212 !important;
+            transform: scale(1.01); /* um pequeno zoom */ 
+            filter: drop-shadow(0 0 18px #ff0033);
+            background-color: #121212 !important;
+        }
+
+        /* Ajuste de margem dos links para o menu colapsado no mobile */
+        @media (max-width: 991.98px) {
+            .navbar-nav {
+                background-color: rgba(10, 10, 10, 0.95);
+                padding: 15px;
+                border: 1px solid #ff0033;
+                margin-top: 10px !important;
+            }
+            .nav-link-cursed::after {
+                left: 0px !important;
+            }
+            .nav-link-cursed:hover::after, .nav-link-cursed.active::after {
+                width: 100% !important;
+            }
         }
 
     </style>
@@ -193,31 +212,46 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         <div class="container">
             
             <a class="logo-container text-decoration-none" href="/index.php" data-aos="zoom-in" data-aos-duration="1200">
-    <img src="/images/logo-grime.jpeg" alt="Grime Shop Logo" class="logo-animada" style="max-height: 120px; width: auto; object-fit: contain; transition: all 0.4s ease-in-out;">
+                <img src="/images/logo-grime.jpeg" alt="Grime Shop Logo" class="logo-animada" style="max-height: 100px; width: auto; object-fit: contain; transition: all 0.4s ease-in-out;">
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
                 <ul class="navbar-nav ms-auto mt-3 mt-lg-0" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
-    <li class="nav-item">
-        <a class="nav-link-cursed <?php echo ($pagina_atual == 'index.php') ? 'active' : ''; ?>" href="/index.php">Drop Inicial</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link-cursed <?php echo ($pagina_atual == 'colecoes.php') ? 'active' : ''; ?>" href="/paginas/colecoes.php">Coleções</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link-cursed <?php echo ($pagina_atual == 'acessorios.php') ? 'active' : ''; ?>" href="/paginas/acessorios.php">Acessórios</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link-cursed <?php echo ($pagina_atual == 'suporte.php') ? 'active' : ''; ?>" href="/paginas/suporte.php">Suporte</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link-cursed <?php echo ($pagina_atual == 'carrinho.php') ? 'active' : ''; ?>" href="/paginas/carrinho.php">Carrinho (2)</a>
-    </li>
-</ul>
+                    <li class="nav-item">
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'index.php') ? 'active' : ''; ?>" href="/index.php">Drop Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'colecoes.php') ? 'active' : ''; ?>" href="/paginas/colecoes.php">Coleções</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'acessorios.php') ? 'active' : ''; ?>" href="/paginas/acessorios.php">Acessórios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'suporte.php') ? 'active' : ''; ?>" href="/paginas/suporte.php">Suporte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'carrinho.php') ? 'active' : ''; ?>" href="/paginas/carrinho.php">Carrinho (2)</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="dropdown d-lg-none">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border: 1px solid #ff0033; border-radius: 0px; background-color: rgba(12, 12, 12, 0.85); padding: 8px 10px;">
+                    <div style="width: 20px; height: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <span style="display: block; width: 100%; height: 2px; background-color: #ff0033;"></span>
+                        <span style="display: block; width: 100%; height: 2px; background-color: #ff0033;"></span>
+                        <span style="display: block; width: 100%; height: 2px; background-color: #ff0033;"></span>
+                    </div>
+                </button>
+                
+                <ul class="dropdown-menu dropdown-menu-end" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px; padding: 10px 0; min-width: 200px;">
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'index.php') ? 'text-white fw-bold' : ''; ?>" href="/index.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Drop Inicial</a></li>
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'colecoes.php') ? 'text-white fw-bold' : ''; ?>" href="/paginas/colecoes.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Coleções</a></li>
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'acessorios.php') ? 'text-white fw-bold' : ''; ?>" href="/paginas/acessorios.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Acessórios</a></li>
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'suporte.php') ? 'text-white fw-bold' : ''; ?>" href="/paginas/suporte.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Suporte</a></li>
+                    <li><hr class="dropdown-divider" style="border-color: #ff0033; opacity: 0.3;"></li>
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'carrinho.php') ? 'text-white fw-bold' : ''; ?>" href="/paginas/carrinho.php" style="color: #ff0033; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Carrinho (2)</a></li>
+                </ul>
             </div>
             
         </div>
