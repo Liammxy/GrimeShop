@@ -175,7 +175,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         <div class="container">
             
             <a class="logo-container text-decoration-none" href="/index.php" data-aos="zoom-in" data-aos-duration="1200">
-    <img src="/images/logo-grime.jpeg" alt="Grime Shop Logo" class="logo-animada" style="max-height: 120px; width: auto; object-fit: contain; transition: all 0.4s ease-in-out; filter: drop-shadow(0 0 5px rgba(255, 0, 51, 0.2));">
+    <img src="/images/logo-grime.jpeg" alt="Grime Shop Logo" class="logo-animada" style="max-height: 120px; width: auto; object-fit: contain; transition: all 0.4s ease-in-out;">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -183,7 +183,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto mt-3 mt-lg-0">
+                <ul class="navbar-nav ms-auto mt-3 mt-lg-0" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
     <li class="nav-item">
         <a class="nav-link-cursed <?php echo ($pagina_atual == 'index.php') ? 'active' : ''; ?>" href="/index.php">Drop Inicial</a>
     </li>

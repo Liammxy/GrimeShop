@@ -25,7 +25,7 @@ include 'includes/header.php';
         </div>
     </div>
 
-    <h2 class="mb-4 text-uppercase" style="font-size: 1.3rem; letter-spacing: 1px; color: #888; padding-left: 0;">// Lançamentos</h2>
+    <h2 class="mb-4 text-uppercase" style="font-size: 1.3rem; letter-spacing: 1px; color: #888; padding-left: 0;">Lançamentos</h2>
 
     <div class="row g-4">
         
