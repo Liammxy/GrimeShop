@@ -19,7 +19,7 @@ include 'includes/header.php';
 
     <div class="row g-4">
         
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-right">
             <div class="card card-cursed p-3 h-100">
                 <img src="images/coturnoinicial.jpeg" class="card-img-top" alt="Coturno Plataforma Dark">
                 <div class="card-body p-0 text-center">
@@ -31,7 +31,7 @@ include 'includes/header.php';
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up">
             <div class="card card-cursed p-3 h-100">
                 <img src="images/calcabaggy.jpeg" class="card-img-top" alt="Calça Baggy Denim">
                 <div class="card-body p-0 text-center">
@@ -43,7 +43,7 @@ include 'includes/header.php';
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-left">
             <div class="card card-cursed p-3 h-100">
                 <img src="images/camisagravata.jpeg" class="card-img-top" alt="Camisa Oversized Grime">
                 <div class="card-body p-0 text-center">

@@ -159,6 +159,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             letter-spacing: 1px;
         }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
