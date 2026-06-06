@@ -85,6 +85,10 @@ if (!empty($_SESSION['carrinho'])) {
                             <div class="col-sm-5 mb-2 mb-sm-0">
                                 <h5 class="text-white text-uppercase fw-bold mb-1" style="font-size: 1rem; letter-spacing: 0.5px;"><?php echo $item['nm_produto']; ?></h5>
                                 <p class="mb-0" style="font-size: 0.8rem; color: #888;"><?php echo $item['ds_produto']; ?></p>
+
+                                <a href="remover_carrinho.php?id=<?php echo $item['id_produto']; ?>" class="text-uppercase small text-decoration-none d-inline-block mt-2 fw-bold" style="color: #dddddd; transition: all 0.2s ease-in-out; letter-spacing: 1px;" onmouseover="this.style.color='#ff0033'; this.style.textShadow='0 0 10px #ff0033';" onmouseout="this.style.color='#dddddd'; this.style.textShadow='none';">
+                                 [ REMOVER ITEM ]
+                                </a>
                             </div>
                             <div class="col-sm-3 mb-2 mb-sm-0">
                                 <span class="text-light small">Qtd: <?php echo $quantidade; ?></span>
