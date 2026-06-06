@@ -69,7 +69,7 @@ include '../includes/header.php';
                         <span class="badge bg-danger mb-2" style="font-size: 0.7rem; letter-spacing: 1px;">DROP_01</span>
                         <h3 class="text-white text-uppercase fw-bold mb-2" style="font-size: 1.4rem; letter-spacing: 1px;">Camisas</h3>
                         <p class="small product-desc mb-4">Malha pesada premium 100% algodão, ombros caídos e estampas com estética de rua.</p>
-                        <a href="#" class="btn btn-cursed w-100 text-uppercase" style="font-size: 0.85rem; letter-spacing: 1px;">Ver Produtos</a>
+                        <a href="camisas.php" class="btn btn-cursed w-100 text-uppercase" style="font-size: 0.85rem; letter-spacing: 1px;">Ver Produtos</a>
                     </div>
                 </div>
             </div>
