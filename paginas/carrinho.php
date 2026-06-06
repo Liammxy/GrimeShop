@@ -1,7 +1,44 @@
 <?php 
-// Puxa o cabeçalho padronizado do diretório includes
+// 1. Inicia a sessão para conseguir ler a "sacola" de produtos salvos
+session_start();
+
+// 2. Inclui a conexão com o banco de dados saindo de paginas e entrando em config
+include '../config/conexao.php';
+
+// 3. Puxa o cabeçalho padronizado do diretório includes
 include '../includes/header.php'; 
+
+// Inicializa variáveis para os cálculos
+$subtotal = 0;
+$produtos_no_carrinho = array();
+
+// 4. Se a sacola não estiver vazia, busca os dados das relíquias no banco
+if (!empty($_SESSION['carrinho'])) {
+    // Pega os IDs salvos (chaves do array) e junta por vírgulas (ex: 1,4)
+    $ids = implode(',', array_keys($_SESSION['carrinho']));
+    
+    $sql_carrinho = "SELECT * FROM Produto WHERE id_produto IN ($ids)";
+    $resultado_carrinho = $conexao->query($sql_carrinho);
+    
+    if ($resultado_carrinho) {
+        while ($row = $resultado_carrinho->fetch_assoc()) {
+            $produtos_no_carrinho[] = $row;
+        }
+    }
+}
 ?>
+
+<style>
+    .btn-cursed {
+        transition: all 0.3s ease-in-out;
+    }
+    .btn-cursed:hover {
+        background-color: #ff0033 !important;
+        color: #fff !important;
+        box-shadow: 0 0 15px #ff0033, 0 0 25px #ff0033;
+        border-color: #ff0033 !important;
+    }
+</style>
 
 <main class="position-relative overflow-hidden pt-0 pb-0" style="min-height: 75vh;">
 
@@ -24,41 +61,42 @@ include '../includes/header.php';
         
         <div class="col-md-8">
             
-            <div class="card p-3 mb-3" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
-                <div class="row align-items-center text-center text-sm-start">
-                    <div class="col-sm-2 mb-3 mb-sm-0">
-                        <img src="../images/calcabaggy.jpeg" class="img-fluid" alt="Calça Baggy" style="max-height: 80px; object-fit: cover;">
-                    </div>
-                    <div class="col-sm-5 mb-2 mb-sm-0">
-                        <h5 class="text-white text-uppercase fw-bold mb-1" style="font-size: 1rem; letter-spacing: 0.5px;">Calça Baggy Denim</h5>
-                        <p class="mb-0" style="font-size: 0.8rem; color: #888;">Tamanho: G | Cor: Preto Estonado</p>
-                    </div>
-                    <div class="col-sm-3 mb-2 mb-sm-0">
-                        <span class="text-light small">Qtd: 1</span>
-                    </div>
-                    <div class="col-sm-2 text-sm-end">
-                        <span class="text-danger fw-bold" style="letter-spacing: 0.5px;">R$ 189,90</span>
-                    </div>
+            <?php if (empty($produtos_no_carrinho)): ?>
+                <div class="card p-4 text-center" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
+                    <p class="text-light mb-0">Seu carrinho está vazio no momento.</p>
+                    <a href="colecoes.php" class="text-danger mt-3 d-inline-block text-uppercase small" style="letter-spacing: 1px; font-size: 0.8rem; text-decoration: none;">[ Explorar Coleções ]</a>
                 </div>
-            </div>
+            <?php else: ?>
+                
+                <?php 
+                foreach ($produtos_no_carrinho as $item): 
+                    $id_atual = $item['id_produto'];
+                    $quantidade = $_SESSION['carrinho'][$id_atual];
+                    $valor_total_item = $item['vl_produto'] * $quantidade;
+                    
+                    // Soma no subtotal acumulado do carrinho inteiro
+                    $subtotal += $valor_total_item;
+                ?>
+                    <div class="card p-3 mb-3" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
+                        <div class="row align-items-center text-center text-sm-start">
+                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                <img src="../images/<?php echo basename($item['im_produto']); ?>" class="img-fluid" alt="<?php echo $item['nm_produto']; ?>" style="max-height: 80px; object-fit: cover;">
+                            </div>
+                            <div class="col-sm-5 mb-2 mb-sm-0">
+                                <h5 class="text-white text-uppercase fw-bold mb-1" style="font-size: 1rem; letter-spacing: 0.5px;"><?php echo $item['nm_produto']; ?></h5>
+                                <p class="mb-0" style="font-size: 0.8rem; color: #888;"><?php echo $item['ds_produto']; ?></p>
+                            </div>
+                            <div class="col-sm-3 mb-2 mb-sm-0">
+                                <span class="text-light small">Qtd: <?php echo $quantidade; ?></span>
+                            </div>
+                            <div class="col-sm-2 text-sm-end">
+                                <span class="text-danger fw-bold" style="letter-spacing: 0.5px;">R$ <?php echo number_format($valor_total_item, 2, ',', '.'); ?></span>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
 
-            <div class="card p-3 mb-3" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
-                <div class="row align-items-center text-center text-sm-start">
-                    <div class="col-sm-2 mb-3 mb-sm-0">
-                        <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?q=80&w=600" class="img-fluid" alt="Coturno Dark" style="max-height: 80px; object-fit: cover;">
-                    </div>
-                    <div class="col-sm-5 mb-2 mb-sm-0">
-                        <h5 class="text-white text-uppercase fw-bold mb-1" style="font-size: 1rem; letter-spacing: 0.5px;">Coturno Plataforma Dark</h5>
-                        <p class="mb-0" style="font-size: 0.8rem; color: #888;">Tamanho: 41 | Solado Tratorado</p>
-                    </div>
-                    <div class="col-sm-3 mb-2 mb-sm-0">
-                        <span class="text-light small">Qtd: 1</span>
-                    </div>
-                    <div class="col-sm-2 text-sm-end">
-                        <span class="text-danger fw-bold" style="letter-spacing: 0.5px;">R$ 249,90</span>
-                    </div>
-                </div>
-            </div>
+            <?php endif; ?>
 
         </div>
 
@@ -68,31 +106,28 @@ include '../includes/header.php';
                 
                 <div class="d-flex justify-content-between mb-2 pb-2" style="border-bottom: 1px solid #1a1a1a;">
                     <span style="color: #b5b5b5; font-size: 0.9rem;">Subtotal</span>
-                    <span class="text-white small">R$ 439,80</span>
+                    <span class="text-white small">R$ <?php echo number_format($subtotal, 2, ',', '.'); ?></span>
                 </div>
                 
                 <div class="d-flex justify-content-between mb-3 pb-2" style="border-bottom: 1px solid #1a1a1a;">
                     <span style="color: #b5b5b5; font-size: 0.9rem;">Envio (Sedex)</span>
-                    <span class="text-success small">GRÁTIS</span>
+                    <span class="text-success small fw-bold">GRÁTIS</span>
                 </div>
 
                 <div class="d-flex justify-content-between mb-4">
                     <span class="text-white fw-bold text-uppercase" style="letter-spacing: 0.5px;">Total Geral</span>
-                    <span class="text-danger fw-bold" style="font-size: 1.2rem;">R$ 439,80</span>
+                    <span class="text-danger fw-bold" style="font-size: 1.2rem;">R$ <?php echo number_format($subtotal, 2, ',', '.'); ?></span>
                 </div>
 
-                <button class="btn btn-cursed w-100 text-uppercase fw-bold py-2 mb-2" style="letter-spacing: 1px; font-size: 0.9rem;">Finalizar Pedido</button>
-                <a href="/ProjetoGrimeShop/index.php" class="btn btn-outline-secondary w-100 text-uppercase small" style="border-radius: 0px; font-size: 0.75rem; letter-spacing: 0.5px; color: #b5b5b5; border-color: #222;">Continuar Comprando</a>
+                <button class="btn btn-cursed w-100 text-uppercase fw-bold py-2 mb-2" style="letter-spacing: 1px; font-size: 0.9rem;" <?php echo (empty($produtos_no_carrinho)) ? 'disabled' : ''; ?>>Finalizar Pedido</button>
+                <a href="colecoes.php" class="btn btn-outline-secondary w-100 text-uppercase small" style="border-radius: 0px; font-size: 0.75rem; letter-spacing: 0.5px; color: #b5b5b5; border-color: #222;">Continuar Comprando</a>
             </div>
         </div>
 
     </div>
 </div>
 
-</div> <!-- Fecha o container -->
-</main> <!-- Fecha a main do vídeo -->
-
-<?php 
+</div> </main> <?php 
 // Puxa o rodapé do diretório includes
 include '../includes/footer.php'; 
 ?>
