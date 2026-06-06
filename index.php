@@ -1,6 +1,14 @@
 <?php 
 // Puxa o cabeçalho estilizado
 include 'includes/header.php'; 
+
+
+// 1. Inclui o arquivo de conexão apontando para a pasta certa
+include('config/conexao.php');
+
+// 2. Faz a query para buscar todos os produtos cadastrados no banco
+$sql_produtos = "SELECT * FROM Produto";
+$resultado = $conexao->query($sql_produtos);
 ?>
 
 <main class="position-relative overflow-hidden pb-0 pt-0">
