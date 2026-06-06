@@ -19,7 +19,7 @@ include '../includes/header.php';
     <div class="container position-relative" style="z-index: 3; py-5;">
 
 <div class="container my-4">
-    <div class="mb-5 mt-4">
+    <div class="mb-5 mt-4" data-aos="fade-down" data-aos-duration="1000">
         <h1 class="display-5 fw-bold text-white text-uppercase mb-2" style="letter-spacing: 2px;">[ COLEÇÕES ]</h1>
         <p class="text-light" style="font-weight: 300; opacity: 0.85;">Explore nossos drops divididos por categorias urbanas.</p>
         <div style="height: 2px; background-color: #ff0033; width: 80px; margin-top: 15px;"></div>
@@ -27,7 +27,7 @@ include '../includes/header.php';
 
     <div class="row g-4">
 
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="1200">
             <div class="card card-cursed p-3 h-100 position-relative overflow-hidden" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
                 <div class="row align-items-center g-3">
                     <div class="col-sm-5 text-center">
@@ -35,7 +35,7 @@ include '../includes/header.php';
                     </div>
                     <div class="col-sm-7 text-center text-sm-start">
                         <span class="badge bg-danger mb-2" style="font-size: 0.7rem; letter-spacing: 1px;">DROP_01</span>
-                        <h3 class="text-white text-uppercase fw-bold mb-2" style="font-size: 1.4rem; letter-spacing: 1px;">Heavy Pants</h3>
+                        <h3 class="text-white text-uppercase fw-bold mb-2" style="font-size: 1.4rem; letter-spacing: 1px;">CALÇAS</h3>
                         <p class="small product-desc mb-4">Calças ultra largas, modelagem baggy, jeans estonado e detalhes utilitários pesados.</p>
                         <a href="#" class="btn btn-cursed w-100 text-uppercase" style="font-size: 0.85rem; letter-spacing: 1px;">Ver Produtos</a>
                     </div>
@@ -43,15 +43,15 @@ include '../includes/header.php';
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-left" data-aos-duration="1200">
             <div class="card card-cursed p-3 h-100 position-relative overflow-hidden" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
                 <div class="row align-items-center g-3">
                     <div class="col-sm-5 text-center">
-                        <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?q=80&w=600" class="img-fluid" alt="Coleção Boots" style="max-height: 220px; object-fit: cover;">
+                        <img src="../images/coturnodois.jpeg" class="img-fluid" alt="Coleção Boots" style="max-height: 220px; object-fit: cover;">
                     </div>
                     <div class="col-sm-7 text-center text-sm-start">
                         <span class="badge bg-danger mb-2" style="font-size: 0.7rem; letter-spacing: 1px;">ESSENTIALS</span>
-                        <h3 class="text-white text-uppercase fw-bold mb-2" style="font-size: 1.4rem; letter-spacing: 1px;">Hard Boots</h3>
+                        <h3 class="text-white text-uppercase fw-bold mb-2" style="font-size: 1.4rem; letter-spacing: 1px;">CALÇADOS</h3>
                         <p class="small product-desc mb-4">Coturnos tratorados, solado industrial de alta borracha e couro com acabamento fosco.</p>
                         <a href="#" class="btn btn-cursed w-100 text-uppercase" style="font-size: 0.85rem; letter-spacing: 1px;">Ver Produtos</a>
                     </div>
@@ -59,15 +59,15 @@ include '../includes/header.php';
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="1200">
             <div class="card card-cursed p-3 h-100 position-relative overflow-hidden" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
                 <div class="row align-items-center g-3">
                     <div class="col-sm-5 text-center">
-                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" class="img-fluid" alt="Coleção Oversized" style="max-height: 220px; object-fit: cover;">
+                        <img src="../images/gato.jpeg" class="img-fluid" alt="Coleção Oversized" style="max-height: 220px; object-fit: cover;">
                     </div>
                     <div class="col-sm-7 text-center text-sm-start">
                         <span class="badge bg-danger mb-2" style="font-size: 0.7rem; letter-spacing: 1px;">DROP_01</span>
-                        <h3 class="text-white text-uppercase fw-bold mb-2" style="font-size: 1.4rem; letter-spacing: 1px;">Oversized Tees</h3>
+                        <h3 class="text-white text-uppercase fw-bold mb-2" style="font-size: 1.4rem; letter-spacing: 1px;">Camisas</h3>
                         <p class="small product-desc mb-4">Malha pesada premium 100% algodão, ombros caídos e estampas com estética de rua.</p>
                         <a href="#" class="btn btn-cursed w-100 text-uppercase" style="font-size: 0.85rem; letter-spacing: 1px;">Ver Produtos</a>
                     </div>
@@ -75,15 +75,15 @@ include '../includes/header.php';
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-left" data-aos-duration="1200">
             <div class="card card-cursed p-3 h-100 position-relative overflow-hidden" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
                 <div class="row align-items-center g-3">
                     <div class="col-sm-5 text-center">
-                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600" class="img-fluid" alt="Coleção Cyber" style="max-height: 220px; object-fit: cover;">
+                        <img src="../images/correntedois.jpeg" class="img-fluid" alt="Coleção Cyber" style="max-height: 220px; object-fit: cover;">
                     </div>
                     <div class="col-sm-7 text-center text-sm-start">
                         <span class="badge bg-secondary mb-2" style="font-size: 0.7rem; letter-spacing: 1px; background-color: #222 !important;">EM BREVE</span>
-                        <h3 class="text-white text-uppercase fw-bold mb-2" style="font-size: 1.4rem; letter-spacing: 1px;">Cyber Gear</h3>
+                        <h3 class="text-white text-uppercase fw-bold mb-2" style="font-size: 1.4rem; letter-spacing: 1px;">ACESSÓRIOS</h3>
                         <p class="small product-desc mb-4">Cintos industriais, óculos escuros futuristas, correntes e acessórios urbanos.</p>
                         <button class="btn btn-outline-secondary w-100 text-uppercase disabled" style="font-size: 0.85rem; letter-spacing: 1px; border-radius: 0px;">Bloqueado</button>
                     </div>

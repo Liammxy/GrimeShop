@@ -15,7 +15,7 @@ include '../includes/header.php';
 
 <div class="container my-4">
     <div class="mb-5 mt-4">
-        <h1 class="display-5 fw-bold text-white text-uppercase mb-2" style="letter-spacing: 2px;">[ CENTRAL_DE_SUPORTE ]</h1>
+        <h1 class="display-5 fw-bold text-white text-uppercase mb-2" style="letter-spacing: 2px;">CENTRAL DE SUPORTE</h1>
         <p class="text-light" style="font-weight: 300; opacity: 0.85;">Dúvidas com o drop, entregas ou problemas com o seu pedido? Reporte abaixo.</p>
         <div style="height: 2px; background-color: #ff0033; width: 80px; margin-top: 15px;"></div>
     </div>
@@ -23,7 +23,7 @@ include '../includes/header.php';
     <div class="row g-5">
         
         <div class="col-md-6">
-            <h3 class="text-white text-uppercase fw-bold mb-4" style="font-size: 1.3rem; letter-spacing: 1px;">// PERGUNTAS FREQUENTES</h3>
+            <h3 class="text-white text-uppercase fw-bold mb-4" style="font-size: 1.3rem; letter-spacing: 1px;">PERGUNTAS FREQUENTES</h3>
             
             <div class="accordion" id="faqAccordion" style="--bs-accordion-border-color: #1a1a1a;">
                 
@@ -70,7 +70,7 @@ include '../includes/header.php';
         </div>
 
         <div class="col-md-6">
-            <h3 class="text-white text-uppercase fw-bold mb-4" style="font-size: 1.3rem; letter-spacing: 1px;">// ABRIR CHAMADO</h3>
+            <h3 class="text-white text-uppercase fw-bold mb-4" style="font-size: 1.3rem; letter-spacing: 1px;">ABRIR CHAMADO</h3>
             
             <div class="card p-4" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
                 <form action="#" method="POST">

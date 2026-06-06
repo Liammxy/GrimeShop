@@ -15,7 +15,7 @@ include 'includes/header.php';
 
 <div class="container my-4">
 
-    <div class="p-5 mb-5 text-center d-flex align-items-center" style="background-color: #0c0c0c; border: 1px solid #ff0033; min-height: 300px;">
+    <div class="p-5 mb-5 text-center d-flex align-items-center" style="background-color: #0c0c0c; border: 1px solid #ff0033; min-height: 300px;" data-aos="fade-down" data-aos-duration="1200">
         <div class="py-2 w-100">
             <h1 class="display-4 fw-bold mb-3 text-white" style="letter-spacing: 2px;">REVOLUCIONE SEU ESTILO</h1>
             <p class="fs-5 text-light mb-4 mx-auto" style="font-weight: 300; opacity: 0.85; max-width: 700px;">
