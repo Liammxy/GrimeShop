@@ -56,7 +56,7 @@ $resultado = $conexao->query($sql_calcas);
                                 <h5 class="product-title"><?php echo $produto['nm_produto']; ?></h5>
                                 <p class="small product-desc mb-2"><?php echo $produto['ds_produto']; ?></p>
                                 <p class="product-price">R$ <?php echo number_format($produto['vl_produto'], 2, ',', '.'); ?></p>
-                                <button class="btn btn-cursed w-100">Adicionar ao Carrinho</button>
+                                <a href="adicionar_carrinho.php?id=<?php echo $produto['id_produto']; ?>" class="btn btn-cursed w-100">Adicionar ao Carrinho</a>
                             </div>
                         </div>
                     </div>
