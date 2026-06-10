@@ -32,8 +32,7 @@ function calcularSubtotalCarrinho(array $itens_carrinho, array $quantidades_sess
 
 /**
  * REQUISITO: Lógica de Pesquisa ou Filtro em Arrays
- * Varre o array do carrinho e filtra itens considerados "Premium" (acima de R$ 150)
- * Prova para a banca a capacidade de aplicar filtros lógicos em coleções de dados.
+ * Varre o array do carrinho e filtra itens
  */
 function obterDestaquesCarrinho(array $itens_carrinho) {
     $destaques = array();
@@ -45,17 +44,11 @@ function obterDestaquesCarrinho(array $itens_carrinho) {
     return $destaques;
 }
 
-// =========================================================================
-
-// 3. Puxa o cabeçalho padronizado do diretório includes
 include '../includes/header.php'; 
 
-// REQUISITO: Armazenamento Estruturado com Arrays Únicos
 $produtos_no_carrinho = array();
 
-// 4. Se a sacola não estiver vazia, busca os dados das relíquias no banco
 if (!empty($_SESSION['carrinho'])) {
-    // Pega os IDs salvos (chaves do array) e junta por vírgulas (ex: 1,4)
     $ids = implode(',', array_keys($_SESSION['carrinho']));
     
     $sql_carrinho = "SELECT * FROM Produto WHERE id_produto IN ($ids)";
@@ -63,7 +56,6 @@ if (!empty($_SESSION['carrinho'])) {
     
     if ($resultado_carrinho) {
         while ($row = $resultado_carrinho->fetch_assoc()) {
-            // Alimenta o array estruturado único
             $produtos_no_carrinho[] = $row;
         }
     }
