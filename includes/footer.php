@@ -12,10 +12,10 @@
                 <div class="col-md-4 text-md-center">
                     <h5 class="text-uppercase fw-bold mb-3" style="letter-spacing: 1px; color: #ffffff;">NAVEGAÇÃO</h5>
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a href="/index.php" class="text-decoration-none small text-uppercase" style="color: #b5b5b5; transition: color 0.2s;" onmouseover="this.style.color='#ff0033'" onmouseout="this.style.color='#b5b5b5'">Drop Inicial</a></li>
-                        <li class="mb-2"><a href="/paginas/colecoes.php" class="text-decoration-none small text-uppercase" style="color: #b5b5b5; transition: color 0.2s;" onmouseover="this.style.color='#ff0033'" onmouseout="this.style.color='#b5b5b5'">Coleções</a></li>
-                        <li class="mb-2"><a href="/paginas/acessorios.php" class="text-decoration-none small text-uppercase" style="color: #b5b5b5; transition: color 0.2s;" onmouseover="this.style.color='#ff0033'" onmouseout="this.style.color='#b5b5b5'">Acessórios</a></li>
-                        <li class="mb-2"><a href="/paginas/suporte.php" class="text-decoration-none small text-uppercase" style="color: #b5b5b5; transition: color 0.2s;" onmouseover="this.style.color='#ff0033'" onmouseout="this.style.color='#b5b5b5'">Suporte</a></li>
+                        <li class="mb-2"><a href="/ProjetoGrimeShop/index.php" class="text-decoration-none small text-uppercase" style="color: #b5b5b5; transition: color 0.2s;" onmouseover="this.style.color='#ff0033'" onmouseout="this.style.color='#b5b5b5'">Drop Inicial</a></li>
+                        <li class="mb-2"><a href="/ProjetoGrimeShop/paginas/colecoes.php" class="text-decoration-none small text-uppercase" style="color: #b5b5b5; transition: color 0.2s;" onmouseover="this.style.color='#ff0033'" onmouseout="this.style.color='#b5b5b5'">Coleções</a></li>
+                        <li class="mb-2"><a href="/ProjetoGrimeShop/paginas/acessorios.php" class="text-decoration-none small text-uppercase" style="color: #b5b5b5; transition: color 0.2s;" onmouseover="this.style.color='#ff0033'" onmouseout="this.style.color='#b5b5b5'">Acessórios</a></li>
+                        <li class="mb-2"><a href="/ProjetoGrimeShop/paginas/suporte.php" class="text-decoration-none small text-uppercase" style="color: #b5b5b5; transition: color 0.2s;" onmouseover="this.style.color='#ff0033'" onmouseout="this.style.color='#b5b5b5'">Suporte</a></li>
                     </ul>
                 </div>
 

@@ -7,7 +7,7 @@ if (file_exists(__DIR__ . '/config.php')) {
 }
 
 // Tenta se conectar ao banco de dados usando as constantes protegidas
-$conexao = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conexao = new mysqli($host, $username, $password, $dbname);
 
 // Se der erro na conexão, para o site e mostra o erro
 if ($conexao->connect_error) {

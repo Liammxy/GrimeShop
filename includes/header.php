@@ -211,26 +211,26 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
     <nav class="navbar navbar-expand-lg navbar-dark navbar-cursed p-0" style="border-bottom: 1px solid #ff0033">
         <div class="container">
             
-            <a class="logo-container text-decoration-none" href="/index.php" data-aos="zoom-in" data-aos-duration="1200">
-                <img src="/images/logo-grime.jpeg" alt="Grime Shop Logo" class="logo-animada" style="max-height: 100px; width: auto; object-fit: contain; transition: all 0.4s ease-in-out;">
+            <a class="logo-container text-decoration-none" href="/ProjetoGrimeShop/index.php" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="/ProjetoGrimeShop/images/logo-grime.jpeg" alt="Grime Shop Logo" class="logo-animada" style="max-height: 100px; width: auto; object-fit: contain; transition: all 0.4s ease-in-out;">
             </a>
             
             <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
                 <ul class="navbar-nav ms-auto mt-3 mt-lg-0" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
                     <li class="nav-item">
-                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'index.php') ? 'active' : ''; ?>" href="/index.php">Drop Inicial</a>
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'index.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/index.php">Drop Inicial</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'colecoes.php') ? 'active' : ''; ?>" href="/paginas/colecoes.php">Coleções</a>
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'colecoes.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/colecoes.php">Coleções</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'acessorios.php') ? 'active' : ''; ?>" href="/paginas/acessorios.php">Acessórios</a>
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'acessorios.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/acessorios.php">Acessórios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'suporte.php') ? 'active' : ''; ?>" href="/paginas/suporte.php">Suporte</a>
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'suporte.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/suporte.php">Suporte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'carrinho.php') ? 'active' : ''; ?>" href="/paginas/carrinho.php">Carrinho (2)</a>
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'carrinho.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/carrinho.php">Carrinho (2)</a>
                     </li>
                 </ul>
             </div>
@@ -245,12 +245,12 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
                 </button>
                 
                 <ul class="dropdown-menu dropdown-menu-end" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px; padding: 10px 0; min-width: 200px;">
-                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'index.php') ? 'text-white fw-bold' : ''; ?>" href="/index.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Drop Inicial</a></li>
-                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'colecoes.php') ? 'text-white fw-bold' : ''; ?>" href="/paginas/colecoes.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Coleções</a></li>
-                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'acessorios.php') ? 'text-white fw-bold' : ''; ?>" href="/paginas/acessorios.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Acessórios</a></li>
-                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'suporte.php') ? 'text-white fw-bold' : ''; ?>" href="/paginas/suporte.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Suporte</a></li>
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'index.php') ? 'text-white fw-bold' : ''; ?>" href="/ProjetoGrimeShop/index.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Drop Inicial</a></li>
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'colecoes.php') ? 'text-white fw-bold' : ''; ?>" href="/ProjetoGrimeShop/paginas/colecoes.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Coleções</a></li>
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'acessorios.php') ? 'text-white fw-bold' : ''; ?>" href="/ProjetoGrimeShop/paginas/acessorios.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Acessórios</a></li>
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'suporte.php') ? 'text-white fw-bold' : ''; ?>" href="/ProjetoGrimeShop/paginas/suporte.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Suporte</a></li>
                     <li><hr class="dropdown-divider" style="border-color: #ff0033; opacity: 0.3;"></li>
-                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'carrinho.php') ? 'text-white fw-bold' : ''; ?>" href="/paginas/carrinho.php" style="color: #ff0033; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Carrinho (2)</a></li>
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'carrinho.php') ? 'text-white fw-bold' : ''; ?>" href="/ProjetoGrimeShop/paginas/carrinho.php" style="color: #ff0033; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Carrinho (2)</a></li>
                 </ul>
             </div>
             
