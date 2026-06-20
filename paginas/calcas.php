@@ -38,7 +38,7 @@ $resultado = $conexao->query($sql_calcas);
         <div class="container my-4">
 
             <!-- Título do Drop de Calças -->
-            <h1 class="text-light text-center mb-5 text-uppercase" style="letter-spacing: 2px; font-weight: bold; data-aos="fade-down"">[ DROP_01 / CALÇAS ]</h1>
+            <h1 class="text-light text-center mb-5 text-uppercase" style="letter-spacing: 2px; font-weight: bold; data-aos="fade-down"">CALÇAS</h1>
 
             <div class="row g-4">
                 

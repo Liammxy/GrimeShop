@@ -126,11 +126,6 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             padding: 12px 24px;
             transition: all 0.3s ease;
         }
-        .btn-cursed:hover {
-            background-color: #000000;
-            color: #ffffff;
-            border-color: #ffffff;
-        }
         /* Cards de Produto Streetwear - Borda Vermelha Fixa */
         .card-cursed {
             background-color: #0c0c0c;

@@ -29,7 +29,7 @@ include '../includes/header.php';
 
 <div class="container my-4">
     <div class="mb-5 mt-4" data-aos="fade-down" data-aos-duration="1000">
-        <h1 class="display-5 fw-bold text-white text-uppercase mb-2" style="letter-spacing: 2px;">[ COLEÇÕES ]</h1>
+        <h1 class="display-5 fw-bold text-white text-uppercase mb-2" style="letter-spacing: 2px;"> COLEÇÕES </h1>
         <p class="text-light" style="font-weight: 300; opacity: 0.85;">Explore nossos drops divididos por categorias urbanas.</p>
         <div style="height: 2px; background-color: #ff0033; width: 80px; margin-top: 15px;"></div>
     </div>

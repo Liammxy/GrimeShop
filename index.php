@@ -28,7 +28,18 @@ $resultado = $conexao->query($sql_produtos);
                     <p class="fs-5 text-light mb-4 mx-auto" style="font-weight: 300; opacity: 0.85; max-width: 700px;">
                         Aguarde o próximo drop. Coturnos pesados, calças baggy e estética urbana underground.
                     </p>
-                    <button class="btn btn-cursed" type="button">Ver Catálogo</button>
+                    <a href="paginas/colecoes.php" class="btn btn-cursed">Ver Coleções</a>
+                    <style>
+                     .btn-cursed {
+                         transition: all 0.3s ease-in-out;
+                     }
+                    .btn-cursed:hover {
+                    background-color: #ff0033 !important;
+                    color: #fff !important;
+                    box-shadow: 0 0 15px #ff0033, 0 0 25px #ff0033;
+                    border-color: #ff0033 !important;
+                     }
+                    </style>
                 </div>
             </div>
 
