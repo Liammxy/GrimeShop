@@ -41,6 +41,19 @@ function filtrarCupomPHP(string $codigoDigitado, array $listaDeCupons) {
     return null; 
 }
 
+/**
+ * RUBRICA TECH FORGE: Filtro adicional para destacar produtos Premium (> 150)
+ */
+function obterDestaquesCarrinho(array $itens_carrinho) {
+    $destaques = array();
+    foreach ($itens_carrinho as $produto) {
+        if ($produto['vl_produto'] > 150.00) {
+            $destaques[] = $produto['nm_produto'];
+        }
+    }
+    return $destaques;
+}
+
 include '../includes/header.php'; 
 
 $produtos_no_carrinho = array();
@@ -57,6 +70,9 @@ if (!empty($_SESSION['carrinho'])) {
 }
 
 $subtotal = calcularSubtotalCarrinho($produtos_no_carrinho, $_SESSION['carrinho'] ?? []);
+
+// Executa a função de destaques capturando o retorno
+$itensPremium = obterDestaquesCarrinho($produtos_no_carrinho);
 
 $descontoAplicado = 0.0;
 $msgCupom = "";
@@ -88,6 +104,12 @@ $totalGeral = $subtotal - $descontoAplicado;
         color: #fff !important;
         box-shadow: 0 0 15px #ff0033, 0 0 25px #ff0033;
         border-color: #ff0033 !important;
+    }
+    .premium-badge-list {
+        background-color: #111; 
+        border: 1px dashed #ff0033; 
+        padding: 12px; 
+        font-family: monospace;
     }
 </style>
 
@@ -181,6 +203,19 @@ $totalGeral = $subtotal - $descontoAplicado;
                             <span class="text-white fw-bold text-uppercase" style="letter-spacing: 0.5px;">Total Geral</span>
                             <span class="text-danger fw-bold" style="font-size: 1.2rem;">R$ <?php echo number_format($totalGeral, 2, ',', '.'); ?></span>
                         </div>
+
+                        <?php if (!empty($itensPremium)): ?>
+                            <div class="premium-badge-list mb-4">
+                                <div class="text-uppercase fw-bold text-white small mb-2" style="letter-spacing: 0.5px; color: #ff0033 !important;">
+                                    ITENS DE GRIFE NO PEDIDO:
+                                </div>
+                                <ul class="list-unstyled mb-0" style="font-size: 0.8rem; color: #ccc;">
+                                    <?php foreach ($itensPremium as $nome_premium): ?>
+                                        <li class="mb-1">⚡ <?php echo $nome_premium; ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
 
                         <button class="btn btn-cursed w-100 text-uppercase fw-bold py-2 mb-2" style="letter-spacing: 1px; font-size: 0.9rem;" data-bs-toggle="modal" data-bs-target="#modalCheckout" <?php echo (empty($produtos_no_carrinho)) ? 'disabled' : ''; ?>>Finalizar Pedido</button>
                         <a href="colecoes.php" class="btn btn-outline-secondary w-100 text-uppercase small" style="border-radius: 0px; font-size: 0.75rem; letter-spacing: 0.5px; color: #b5b5b5; border-color: #222;">Continuar Comprando</a>

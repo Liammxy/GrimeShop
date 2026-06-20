@@ -1,10 +1,5 @@
 <?php
 
-/**
- * REQUISITO: Modularização com Funções de Processamento & Fluxo de Dados (Parâmetros e Retorno)
- * Recebe o array estruturado de itens e o array de quantidades da sessão para calcular o total.
- * REQUISITO EXTRA: Validação de Regras de Negócio (Retorna 0 se o carrinho estiver vazio)
- */
 function calcularSubtotalCarrinho(array $itens_carrinho, array $quantidades_sessao) {
     // Regra de Negócio: Se o array estiver vazio, o total é zero.
     if (empty($itens_carrinho)) {

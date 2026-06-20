@@ -1,14 +1,7 @@
 <?php
-// 1. Inicia a sessão para conseguir ler e limpar o carrinho
 session_start();
 
-// 2. Inclui o cabeçalho padronizado do diretório includes
 include '../includes/header.php';
-
-// =========================================================================
-// REQUISITO TECH FORGE: PROCESSAMENTO DE DADOS E VALIDAÇÃO DE REGRAS DE NEGÓCIO
-// =========================================================================
-
 // Verifica se os dados chegaram via formulário (POST)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     

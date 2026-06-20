@@ -5,8 +5,8 @@ include 'includes/header.php';
 // 1. Inclui o arquivo de conexão apontando para a pasta certa
 include('config/conexao.php');
 
-// 2. Faz a query para buscar todos os produtos cadastrados no banco
-$sql_produtos = "SELECT * FROM Produto";
+// 2. Query Avançada: Junta as tabelas Produto e Categoria usando a FK id_categoria (Critério de Rubrica)
+$sql_produtos = "SELECT p.*, c.nm_categoria FROM produto p INNER JOIN categoria c ON p.id_categoria = c.id_categoria";
 $resultado = $conexao->query($sql_produtos);
 ?>
 
@@ -48,14 +48,18 @@ $resultado = $conexao->query($sql_produtos);
             <div class="row g-4">
                 
                 <?php
-                // O laço while vai repetir esse bloco de col-md-4 para cada produto que estiver cadastrado no banco de dados
+                // O laço while repete o bloco puxando os dados integrados via INNER JOIN
                 while($produto = $resultado->fetch_assoc()) {
                 ?>
                     <div class="col-md-4" data-aos="fade-up">
                         <div class="card card-cursed p-3 h-100">
                             <img src="images/<?php echo basename($produto['im_produto']); ?>" class="card-img-top" alt="<?php echo $produto['nm_produto']; ?>">
                             
-                            <div class="card-body p-0 text-center">
+                            <div class="card-body p-0 text-center mt-3">
+                                <span class="d-block text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 1.5px; color: #ff0033;">
+                                    [ <?php echo $produto['nm_categoria']; ?> ]
+                                </span>
+                                
                                 <h5 class="product-title"><?php echo $produto['nm_produto']; ?></h5>
                                 <p class="small product-desc mb-2"><?php echo $produto['ds_produto']; ?></p>
                                 <p class="product-price">R$ <?php echo number_format($produto['vl_produto'], 2, ',', '.'); ?></p>
