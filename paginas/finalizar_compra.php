@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h1 class='display-4 text-danger fw-bold text-uppercase' style='letter-spacing: 2px;'>[ COMPRA FINALIZADA ]</h1>
                 <p class='lead text-uppercase small mt-3' style='letter-spacing: 1px; opacity: 0.85;'>Obrigado por colar com a Grime Shop.</p>
                 <hr style='border-color: #222;'>
-                <p class='small text-secondary text-uppercase' style='letter-spacing: 0.5px;'>Seu pedido fictício foi processado com sucesso. Enviaremos as atualizações diretamente no seu WhatsApp.</p>
+                <p class='small text-secondary text-uppercase' style='letter-spacing: 0.5px;'>Seu pedido foi processado com sucesso. Enviaremos as atualizações diretamente no seu WhatsApp.</p>
                 <a href='colecoes.php' class='btn btn-outline-light mt-3 text-uppercase fw-bold' style='border-radius: 0px; font-size: 0.8rem; letter-spacing: 1px; transition: all 0.3s;' onmouseover=\"this.style.backgroundColor='#ff0033'; this.style.borderColor='#ff0033';\" onmouseout=\"this.style.backgroundColor='transparent'; this.style.borderColor='#fff';\">Voltar para as Coleções</a>
             </div>
           </div>";
