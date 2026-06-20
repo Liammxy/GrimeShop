@@ -251,3 +251,57 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             
         </div>
     </nav>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+  <div id="toastCarrinho" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" style="border: 1px solid #ff0033 !important; border-radius: 0px; display: none; transition: opacity 0.3s ease-in-out;">
+    <div class="d-flex">
+      <div class="toast-body text-uppercase fw-bold" style="letter-spacing: 0.5px; font-size: 0.85rem;">
+        [ PRODUTO ADICIONADO AO CARRINHO ]
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" aria-label="Close" onclick="fecharToastGlobal()"></button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Função Global interceptora para os botões de adicionar ao carrinho
+document.addEventListener('click', function(e) {
+    // Verifica se o elemento clicado tem a classe do botão de adicionar
+    if (e.target && e.target.classList.contains('btn-add-carrinho')) {
+        e.preventDefault();
+        
+        const idProduto = e.target.getAttribute('data-id');
+        if (!idProduto) return;
+
+        // Requisição em background para atualizar a sessão do PHP
+        // Linha corrigida com o caminho absoluto do projeto local
+        fetch(`/ProjetoGrimeShop/paginas/adicionar_carrinho.php?id=${idProduto}`, {
+          method: 'GET'
+        })
+        .then(response => {
+            const elementoToast = document.getElementById('toastCarrinho');
+            
+            // Exibe o Toast estilizado
+            elementoToast.style.display = 'block';
+            elementoToast.style.opacity = '1';
+            
+            // Faz sumir após 3 segundos automaticamente
+            setTimeout(() => {
+                fecharToastGlobal();
+            }, 3000);
+        })
+        .catch(error => console.error('Erro na requisição global do carrinho:', error));
+    }
+});
+
+function fecharToastGlobal() {
+    const elementoToast = document.getElementById('toastCarrinho');
+    if (elementoToast) {
+        elementoToast.style.opacity = '0';
+        setTimeout(() => {
+            elementoToast.style.display = 'none';
+        }, 300);
+    }
+}
+</script>
+</body>
