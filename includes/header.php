@@ -225,7 +225,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
                         <a class="nav-link-cursed <?php echo ($pagina_atual == 'suporte.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/suporte.php">Suporte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'carrinho.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/carrinho.php">Carrinho (2)</a>
+                        <a class="nav-link-cursed <?php echo ($pagina_atual == 'carrinho.php') ? 'active' : ''; ?>" href="/ProjetoGrimeShop/paginas/carrinho.php">Carrinho</a>
                     </li>
                 </ul>
             </div>
@@ -245,20 +245,21 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
                     <li><a class="dropdown-item <?php echo ($pagina_atual == 'acessorios.php') ? 'text-white fw-bold' : ''; ?>" href="/ProjetoGrimeShop/paginas/acessorios.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Acessórios</a></li>
                     <li><a class="dropdown-item <?php echo ($pagina_atual == 'suporte.php') ? 'text-white fw-bold' : ''; ?>" href="/ProjetoGrimeShop/paginas/suporte.php" style="color: #666666; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Suporte</a></li>
                     <li><hr class="dropdown-divider" style="border-color: #ff0033; opacity: 0.3;"></li>
-                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'carrinho.php') ? 'text-white fw-bold' : ''; ?>" href="/ProjetoGrimeShop/paginas/carrinho.php" style="color: #ff0033; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Carrinho (2)</a></li>
+                    <li><a class="dropdown-item <?php echo ($pagina_atual == 'carrinho.php') ? 'text-white fw-bold' : ''; ?>" href="/ProjetoGrimeShop/paginas/carrinho.php" style="color: #ff0033; font-family: 'Cardo', serif; text-transform: uppercase; font-size: 0.9rem; padding: 10px 20px;">Carrinho</a></li>
                 </ul>
             </div>
             
         </div>
     </nav>
 
-    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
-  <div id="toastCarrinho" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" style="border: 1px solid #ff0033 !important; border-radius: 0px; display: none; transition: opacity 0.3s ease-in-out;">
-    <div class="d-flex">
-      <div class="toast-body text-uppercase fw-bold" style="letter-spacing: 0.5px; font-size: 0.85rem;">
-        [ PRODUTO ADICIONADO AO CARRINHO ]
+    <div class="toast-container position-fixed bottom-0 end-0 p-4" style="z-index: 1200;">
+  <div id="toastCarrinho" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" 
+       style="border: 2px solid #ff0033 !important; border-radius: 0px; display: none; min-width: 350px; box-shadow: 0 0 25px rgba(255, 0, 51, 0.6); transition: opacity 0.3s ease-in-out;">
+    <div class="d-flex p-2 align-items-center">
+      <div class="toast-body text-uppercase fw-bold flex-grow-1" style="letter-spacing: 1.5px; font-size: 1.05rem; color: #ffffff;">
+        <span style="color: #ff0033; margin-right: 5px;"></span> PRODUTO ADICIONADO AO CARRINHO!
       </div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" aria-label="Close" onclick="fecharToastGlobal()"></button>
+      <button type="button" class="btn-close btn-close-white me-2" aria-label="Close" style="font-size: 1.1rem;" onclick="fecharToastGlobal()"></button>
     </div>
   </div>
 </div>

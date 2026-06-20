@@ -51,7 +51,9 @@ $resultado = $conexao->query($sql_camisas);
                                 <h5 class="product-title mt-3"><?php echo $produto['nm_produto']; ?></h5>
                                 <p class="small product-desc mb-2"><?php echo $produto['ds_produto']; ?></p>
                                 <p class="product-price">R$ <?php echo number_format($produto['vl_produto'], 2, ',', '.'); ?></p>
-                                <a href="adicionar_carrinho.php?id=<?php echo $produto['id_produto']; ?>" class="btn btn-cursed w-100">Adicionar ao Carrinho</a>
+                                <button class="btn btn-cursed btn-add-carrinho text-uppercase w-100 fw-bold" data-id="<?php echo $produto['id_produto']; ?>">
+                                Adicionar ao Carrinho
+                                </button>
                             </div>
                         </div>
                     </div>
