@@ -2,20 +2,13 @@
 session_start();
 include '../config/conexao.php';
 
-// -------------------------------------------------------------------------
-// RUBRICA TECH FORGE: Armazenamento Estruturado com Arrays
-// -------------------------------------------------------------------------
 $cuponsDisponiveis = [
     ['codigo' => 'GRIME10', 'desconto' => 10, 'ativo' => true],
     ['codigo' => 'BITUCA20', 'desconto' => 20, 'ativo' => true],
     ['codigo' => 'REVOLUCAO', 'desconto' => 50, 'ativo' => false]
 ];
 
-// -------------------------------------------------------------------------
-// RUBRICA TECH FORGE: Modularização com Funções e Fluxo de Parâmetros/Retorno
-// -------------------------------------------------------------------------
 function calcularSubtotalCarrinho(array $itens_carrinho, array $quantidades_sessao) {
-    // RUBRICA TECH FORGE: Validação de Regras de Negócio com Condicionais
     if (empty($itens_carrinho)) {
         return 0.0;
     }
@@ -29,9 +22,6 @@ function calcularSubtotalCarrinho(array $itens_carrinho, array $quantidades_sess
     return $soma; 
 }
 
-// -------------------------------------------------------------------------
-// RUBRICA TECH FORGE: Lógica de Pesquisa ou Filtro em Arrays (100% PHP)
-// -------------------------------------------------------------------------
 function filtrarCupomPHP(string $codigoDigitado, array $listaDeCupons) {
     foreach ($listaDeCupons as $cupom) {
         if ($cupom['codigo'] === strtoupper($codigoDigitado) && $cupom['ativo'] === true) {
@@ -41,9 +31,6 @@ function filtrarCupomPHP(string $codigoDigitado, array $listaDeCupons) {
     return null; 
 }
 
-/**
- * RUBRICA TECH FORGE: Filtro adicional para destacar produtos Premium (> 150)
- */
 function obterDestaquesCarrinho(array $itens_carrinho) {
     $destaques = array();
     foreach ($itens_carrinho as $produto) {
@@ -57,6 +44,7 @@ function obterDestaquesCarrinho(array $itens_carrinho) {
 include '../includes/header.php'; 
 
 $produtos_no_carrinho = array();
+$quantidades_sessao = $_SESSION['carrinho'] ?? [];
 
 if (!empty($_SESSION['carrinho'])) {
     $ids = implode(',', array_keys($_SESSION['carrinho']));
@@ -69,9 +57,7 @@ if (!empty($_SESSION['carrinho'])) {
     }
 }
 
-$subtotal = calcularSubtotalCarrinho($produtos_no_carrinho, $_SESSION['carrinho'] ?? []);
-
-// Executa a função de destaques capturando o retorno
+$subtotal = calcularSubtotalCarrinho($produtos_no_carrinho, $quantidades_sessao);
 $itensPremium = obterDestaquesCarrinho($produtos_no_carrinho);
 
 $descontoAplicado = 0.0;
@@ -81,7 +67,6 @@ $classeMsg = "text-danger";
 if (isset($_POST['aplicar_cupom']) && !empty($_POST['cupom'])) {
     $cupomEncontrado = filtrarCupomPHP($_POST['cupom'], $cuponsDisponiveis);
     
-    // RUBRICA TECH FORGE: Validação de Regras de Negócio com Condicionais
     if ($cupomEncontrado) {
         $porcentagem = $cupomEncontrado['desconto'];
         $descontoAplicado = $subtotal * ($porcentagem / 100);
@@ -140,7 +125,7 @@ $totalGeral = $subtotal - $descontoAplicado;
                         <?php 
                         foreach ($produtos_no_carrinho as $item): 
                             $id_atual = $item['id_produto'];
-                            $quantidade = $_SESSION['carrinho'][$id_atual];
+                            $quantidade = $quantidades_sessao[$id_atual] ?? 1;
                             $valor_total_item = $item['vl_produto'] * $quantidade;
                         ?>
                             <div class="card p-3 mb-3" style="background-color: #0c0c0c; border: 1px solid #ff0033; border-radius: 0px;">
@@ -291,5 +276,20 @@ function mascaraCEP(input) {
     v = v.replace(/^(\d{5})(\d)/, "$1-$2");
     input.value = v;
 }
+
+// utilização do metodo do reduce
+const itensCarrinhoJS = <?php echo json_encode(array_map(function($item) use ($quantidades_sessao) {
+    return [
+        'preco' => (float)$item['vl_produto'],
+        'quantidade' => (int)($quantidades_sessao[$item['id_produto']] ?? 1)
+    ];
+}, $produtos_no_carrinho)); ?>;
+
+const subtotalCalculadoReduce = itensCarrinhoJS.reduce((acumulador, item) => {
+    return acumulador + (item.preco * item.quantidade);
+}, 0);
+
+console.log("Subtotal do carrinho via .reduce(): R$", subtotalCalculadoReduce.toFixed(2));
 </script>
+
 <?php include '../includes/footer.php'; ?>

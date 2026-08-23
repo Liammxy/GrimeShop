@@ -1,11 +1,10 @@
 <?php 
-// Puxa o cabeçalho estilizado
+
 include 'includes/header.php'; 
 
-// 1. Inclui o arquivo de conexão apontando para a pasta certa
 include('config/conexao.php');
 
-// 2. Query Avançada: Junta as tabelas Produto e Categoria usando a FK id_categoria (Critério de Rubrica)
+// Query Avançada: Junta as tabelas Produto e Categoria usando a FK id_categoria (Critério de Rubrica)
 $sql_produtos = "SELECT p.*, c.nm_categoria FROM produto p INNER JOIN categoria c ON p.id_categoria = c.id_categoria";
 $resultado = $conexao->query($sql_produtos);
 ?>
@@ -48,7 +47,7 @@ $resultado = $conexao->query($sql_produtos);
             <div class="row g-4">
                 
                 <?php
-                // O laço while repete o bloco puxando os dados integrados via INNER JOIN
+                
                 while($produto = $resultado->fetch_assoc()) {
                 ?>
                     <div class="col-md-4" data-aos="fade-up">
@@ -70,7 +69,7 @@ $resultado = $conexao->query($sql_produtos);
                         </div>
                     </div>
                 <?php
-                } // Fim do laço de repetição do PHP
+                }
                 ?>
 
             </div>
